@@ -1,0 +1,32 @@
+Worker Activity Detection Setup Instructions
+
+1. Environment Setup:
+   - Install Anaconda or Miniconda
+   - Create a virtual environment:
+     conda create -n mediapipe_env python=3.9.8
+   - Activate the environment:
+     conda activate mediapipe_env
+   - Install dependencies:
+     pip install opencv-python numpy mediapipe
+
+2. Running the System:
+   - Double-click `start_worker_activity.bat`
+   - This file should contain something like the following:
+
+     @echo off
+     :: Replace the below path with your actual Conda env path
+     call "C:\Users\AppData\Local\miniconda3\condabin\conda.bat" activate mediapipe_env
+     python worker_activity_system.py
+
+   - OR manually run the script:
+     python worker_activity_system.py
+
+3. Notes:
+   - Tested on Python 3.9.8
+   - Mediapipe works best between Python 3.8 to 3.10 version
+   - This project uses OpenCV and Mediapipe for motion + pose detection
+   - Logs are saved to `worker_activity_log.csv`, after every run it will overwrite the csv file, to see current results
+
+4. 🪄 Make it Auto-Start (Windows):
+   - Copy `start_worker_activity.bat` into:
+     C:\Users\<YourUsername>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
